@@ -1,14 +1,14 @@
-package io.jug.twoface.imm;
+package io.jug.twoface.dec;
 
 import java.util.Iterator;
 
-import static io.jug.twoface.imm.Drink.Type.Beer;
+import static io.jug.twoface.dec.Drink.Type.Beer;
 import static java.util.stream.StreamSupport.stream;
 
-final class Beers implements Drinks {
+final class BeersOnly implements Drinks {
   private final Drinks drinks;
 
-  Beers(Drinks drinks) {
+  BeersOnly(Drinks drinks) {
     this.drinks = drinks;
   }
 

@@ -1,4 +1,4 @@
-package io.jug.twoface.imm;
+package io.jug.twoface.dec;
 
 import java.util.Iterator;
 import java.util.List;
