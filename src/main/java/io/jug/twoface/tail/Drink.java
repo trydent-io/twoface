@@ -1,4 +1,4 @@
-package io.jug.twoface;
+package io.jug.twoface.tail;
 
 import java.util.HashMap;
 import java.util.Map;

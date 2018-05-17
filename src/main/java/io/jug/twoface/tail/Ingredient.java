@@ -1,4 +1,4 @@
-package io.jug.twoface;
+package io.jug.twoface.tail;
 
 public class Ingredient implements Comparable<Ingredient> {
   private String name = "";
