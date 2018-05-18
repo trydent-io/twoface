@@ -4,6 +4,7 @@ import io.jug.twoface.tail.Drink;
 import io.jug.twoface.tail.Ingredient;
 
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 
 public class MrCoffee {
@@ -15,18 +16,18 @@ public class MrCoffee {
     this.ingredients = List.of(ingredients);
   }
 
-  public boolean hasAvailable(String drink) {
-    return drinks.stream()
-      .filter(it -> it.getName().equals(drink))
-      .anyMatch(this::hasIngredients);
-  }
-
-  public boolean hasIngredients(Drink d) {
-    d.setMakeable(ingredients.stream().anyMatch(isInStock(d)));
-    return d.getMakeable();
-  }
-
-  public Predicate<Ingredient> isInStock(Drink d) {
-    return it -> d.getRecipe().containsKey(it.getName()) && it.getStock() > d.getRecipe().get(it.getName());
+  public boolean isAvailable() {
+    for (Drink d : this.drinks) {
+      Map<String, Integer> currRecipe = d.getRecipe();
+      for (Ingredient i : this.ingredients) {
+        if (currRecipe.containsKey(i.getName()) && i.getStock() < currRecipe.get(i.getName())) {
+          d.setMakeable(false);
+          return false;
+        }
+        d.setMakeable(true);
+      }
+      return true;
+    }
+    return false;
   }
 }

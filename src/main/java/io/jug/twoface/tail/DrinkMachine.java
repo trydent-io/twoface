@@ -70,11 +70,11 @@ public class DrinkMachine {
       for (Ingredient i : ingredientList) {
         if (currRecipe.containsKey(i.getName()) && i.getStock() < currRecipe.get(i.getName())) {
           d.setMakeable(false);
-          break;//check next drink
+          break;
         }
         d.setMakeable(true);
-      }//Ingredient loop
-    }//Drink loop
+      }
+    }
   }
 
   public static void updateCosts() {
