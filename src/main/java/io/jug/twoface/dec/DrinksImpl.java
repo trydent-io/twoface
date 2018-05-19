@@ -1,7 +1,8 @@
 package io.jug.twoface.dec;
 
+import io.jug.twoface.cursor.Cursor;
+
 import java.util.Iterator;
-import java.util.List;
 
 final class DrinksImpl implements Drinks {
   private final Drink[] drinks;
@@ -12,6 +13,6 @@ final class DrinksImpl implements Drinks {
 
   @Override
   public final Iterator<Drink> iterator() {
-    return List.of(drinks).iterator();
+    return Cursor.forward(drinks);
   }
 }
