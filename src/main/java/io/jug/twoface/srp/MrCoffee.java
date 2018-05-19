@@ -16,7 +16,7 @@ public class MrCoffee {
     this.ingredients = List.of(ingredients);
   }
 
-  public boolean isAvailable() {
+  public boolean isAvailable(String coffee) {
     for (Drink d : this.drinks) {
       Map<String, Integer> currRecipe = d.getRecipe();
       for (Ingredient i : this.ingredients) {

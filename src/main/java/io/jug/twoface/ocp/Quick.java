@@ -1,6 +1,6 @@
 package io.jug.twoface.ocp;
 
-public class Quick {
+public class Quick implements Sorting {
   public int[] sort(int[] values) {
     return sort(values, 0, values.length - 1);
   }

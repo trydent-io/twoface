@@ -20,7 +20,7 @@ class MrCoffeeTest {
     };
 
     assertThat(
-      new MrCoffee(drinks, ingredients).hasAvailable("Coffee")
+      new MrCoffee(drinks, ingredients).isAvailable("Coffee")
     ).isTrue();
   }
 }
